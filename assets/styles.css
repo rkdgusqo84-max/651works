@@ -174,9 +174,6 @@ a.work:hover .more,a.work:focus-visible .more{opacity:1;transform:none}
 .copy{grid-column:10 / -1;align-self:end;justify-self:end;margin:0;white-space:nowrap;font-family:var(--f-en);font-size:12px;color:var(--c-text-2)}
 
 /* ───────── Japan page ───────── */
-.ja-lead{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:24px 48px;margin-top:clamp(32px,4vw,56px)}
-.ja-lead p{margin:0;max-width:34em;font-size:clamp(16px,1.4vw,19px);line-height:1.9}
-.ja-lead strong{font-weight:600}
 .offer{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--gap)}
 .offer article{display:flex;flex-direction:column;gap:14px;border-top:1px solid var(--c-text);padding-top:18px}
 .offer h3{margin:0;font-weight:500;font-size:var(--fs-h3);letter-spacing:-.02em;line-height:1.35}
