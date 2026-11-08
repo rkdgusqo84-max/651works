@@ -72,11 +72,18 @@
       return '<div class="ph"><span class="label">' + esc(CATS[p.category]) + '</span>' +
              '<strong>Coming soon</strong><span class="label">이미지 교체 영역</span></div>';
     }
-    return '<img src="' + esc(p.image) + '" alt="" loading="lazy" decoding="async"><span class="more">View project →</span>';
+    return '<img src="' + esc(p.image) + '" alt="" loading="lazy" decoding="async"><span class="more">' + (JA ? 'Watch ↗' : 'View project →') + '</span>';
+  }
+  // 일본어 페이지는 한국어 상세 페이지 대신 원본 영상(유튜브·인스타그램)으로 바로 연결
+  function videoUrl(p) {
+    var v = [].concat(p.youtube || [])[0];
+    return v ? 'https://www.youtube.com/watch?v=' + v.id + (v.start ? '&t=' + v.start + 's' : '') : (p.link || '');
   }
   function workHTML(p, half) {
     var tag = p.placeholder ? 'div' : 'a';
-    var href = p.placeholder ? '' : ' href="project.html?id=' + encodeURIComponent(p.id) + '"';
+    var href = p.placeholder ? ''
+      : JA ? ' href="' + esc(videoUrl(p)) + '" target="_blank" rel="noopener"'
+      : ' href="project.html?id=' + encodeURIComponent(p.id) + '"';
     return '<' + tag + ' class="work ' + (!half && p.span === 'full' ? 'full' : 'half') + '" data-cat="' + esc(p.category) + '"' + href + ' data-reveal>' +
       '<div class="work-media" style="aspect-ratio:' + esc(p.ratio || '16/9') + '">' + mediaHTML(p) + '</div>' +
       '<div class="work-info"><h3>' + esc((JA && p.titleJa) || p.title) + '</h3><span class="year">' + esc(p.year || '—') + '</span>' +

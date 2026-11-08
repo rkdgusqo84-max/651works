@@ -185,9 +185,6 @@ a.work:hover .more,a.work:focus-visible .more{opacity:1;transform:none}
 .flow strong{font-weight:500;font-size:18px}
 .flow p{margin:0;font-size:15px;color:var(--c-text-2)}
 .ja-note{margin:14px 0 0;font-size:15px;color:var(--c-text-2)}
-.japan-box{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:24px 48px;border-top:1px solid var(--c-text);padding-top:24px}
-.japan-box p{margin:0;max-width:36em;font-size:17px}
-.japan-box p[lang="ja"]{margin-top:10px;color:var(--c-text-2);font-family:'Noto Sans JP','Pretendard',sans-serif;font-size:15px}
 
 /* ───────── Project detail ───────── */
 .p-head{padding-top:calc(var(--header-h) + clamp(48px,7vw,104px))}
