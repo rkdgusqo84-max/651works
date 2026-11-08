@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Project — 651WORKS</title>
+<meta name="theme-color" content="#F1EFE9">
+<script>document.documentElement.classList.add('js')</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+<a class="skip" href="#project">본문으로 건너뛰기</a>
+
+<header class="header">
+  <div class="wrap">
+    <a class="logo" href="index.html" aria-label="651WORKS 홈"><img src="assets/logo.png" alt="651WORKS" width="1253" height="103"></a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
+    <nav class="nav" id="nav" aria-label="주요 메뉴">
+      <a href="works.html" aria-current="true">Work</a>
+      <a href="index.html#services">Services</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<!-- 내용은 assets/projects.js 데이터로 채워짐 (project.html?id=...) -->
+<main id="project"></main>
+
+<footer class="footer" style="margin-top:var(--section)">
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <img src="assets/logo.png" alt="651WORKS" width="1253" height="103">
+      <span class="label">Cinematography Studio</span>
+    </div>
+    <div class="footer-col">
+      <span class="label">Fields</span>
+      <span>Cinematography · Lighting · Drone &amp; FPV</span>
+    </div>
+    <div class="footer-col">
+      <span class="label">Contact</span>
+      <a class="u" href="mailto:[EMAIL]">[EMAIL]</a>
+      <a class="u" href="index.html#contact">Start a project</a>
+    </div>
+    <p class="copy">© 2026 651WORKS. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="assets/projects.js"></script>
+<script src="assets/site.js"></script>
+</body>
+</html>
