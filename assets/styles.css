@@ -67,16 +67,24 @@ button{font:inherit;color:inherit}
 .menu-btn{display:none;background:none;border:0;padding:10px 0;font-family:var(--f-en);font-size:14px;font-weight:500;cursor:pointer}
 
 /* ───────── Hero ───────── */
-.hero{padding-top:calc(var(--header-h) + clamp(48px,8vw,120px))}
+/* 전체 화면 영상 위에 텍스트 (kreateimage 방식) */
+.hero{position:relative;height:100vh;height:100svh;min-height:560px;display:flex;align-items:flex-end;overflow:hidden;background:#1d1e1b;color:var(--c-white)}
+.hero video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero-shade{position:absolute;inset:0;background:linear-gradient(to top,rgba(20,20,18,.66) 0%,rgba(20,20,18,.18) 48%,rgba(20,20,18,.06) 70%,rgba(20,20,18,.28) 100%)}
+.hero-inner{position:relative;width:100%;padding-bottom:clamp(40px,6vw,88px)}
+/* 너무 또렷하지 않게: 살짝 투명한 흰색 + 부드러운 그림자 (line의 overflow에 잘리지 않도록 drop-shadow) */
+.hero .hero-title{color:rgba(255,255,255,.93);font-size:clamp(56px,9.6vw,168px);filter:drop-shadow(0 2px 22px rgba(0,0,0,.38)) drop-shadow(0 1px 2px rgba(0,0,0,.18))}
+.hero .hero-sub{color:rgba(255,255,255,.9);text-shadow:0 1px 14px rgba(0,0,0,.45)}
+.hero .label{color:rgba(255,255,255,.78);text-shadow:0 1px 10px rgba(0,0,0,.45)}
+.has-hero .header:not(.scrolled):not(.open){color:var(--c-white)}
+.has-hero .header:not(.scrolled):not(.open) .logo img{filter:brightness(0) invert(1) drop-shadow(0 1px 8px rgba(0,0,0,.35))}
+.has-hero .header:not(.scrolled):not(.open) .nav a{text-shadow:0 1px 10px rgba(0,0,0,.4)}
 .hero-title{margin:0;font-family:var(--f-en);font-weight:500;font-size:var(--fs-display);line-height:.92;letter-spacing:-.045em}
 .hero-title .line{display:block;overflow:hidden;padding-bottom:.04em}
 .hero-title .line > span{display:inline-block}
 .hero-row{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:var(--gap);margin-top:clamp(32px,4vw,56px);align-items:end}
 .hero-sub{grid-column:1 / span 5;margin:0;font-family:var(--f-en);font-size:clamp(18px,1.6vw,24px);line-height:1.4;letter-spacing:-.015em}
 .hero-meta{grid-column:9 / -1;display:flex;justify-content:space-between;gap:16px}
-.reel{margin-top:clamp(48px,6vw,96px);position:relative;aspect-ratio:16/9;background:var(--c-bg-2);overflow:hidden}
-.reel video{width:100%;height:100%;object-fit:cover}
-.reel-cap{display:flex;justify-content:space-between;gap:16px;margin-top:14px}
 
 /* ───────── Section heads ───────── */
 .section{padding-top:var(--section)}

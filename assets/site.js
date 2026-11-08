@@ -12,7 +12,12 @@
 
   /* ── Header: 스크롤 시 배경, 모바일 메뉴 ── */
   var header = document.querySelector('.header');
-  function onScroll() { header.classList.toggle('scrolled', window.scrollY > 8); }
+  // 영상 히어로가 있으면 영상을 지날 때까지 투명 헤더 유지
+  var hero = document.querySelector('.hero');
+  function onScroll() {
+    var limit = hero ? hero.offsetHeight - header.offsetHeight : 8;
+    header.classList.toggle('scrolled', window.scrollY > limit);
+  }
   onScroll();
   window.addEventListener('scroll', onScroll, { passive: true });
 
@@ -50,7 +55,7 @@
   window.addEventListener('pageshow', function (e) { if (e.persisted) document.body.classList.remove('leaving'); });
 
   /* ── 쇼릴: 화면 밖이면 멈춤, 모션 줄이기 설정이면 자동재생 안 함 ── */
-  var reel = document.querySelector('.reel video');
+  var reel = document.querySelector('.hero video');
   if (reel) {
     if (reduce) { reel.removeAttribute('autoplay'); reel.pause(); reel.controls = true; }
     else if ('IntersectionObserver' in window) {

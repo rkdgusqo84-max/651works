@@ -14,7 +14,7 @@
 <link rel="stylesheet" href="assets/styles.css">
 <link rel="preload" as="image" href="video/hero.jpg">
 </head>
-<body>
+<body class="has-hero">
 <a class="skip" href="#main">본문으로 건너뛰기</a>
 
 <header class="header">
@@ -33,20 +33,20 @@
 <main id="main">
 
 <!-- 01 Hero -->
-<section id="top" class="hero wrap">
-  <h1 class="hero-title"><span class="line"><span>Ideas into</span></span><span class="line"><span>Experience.</span></span></h1>
-  <div class="hero-row" data-reveal>
-    <p class="hero-sub">A cinematography studio — camera, light &amp; aerial.</p>
-    <div class="hero-meta">
-      <span class="label">Cinematography Studio</span>
-      <a class="label u" href="#work">Scroll ↓</a>
+<section id="top" class="hero">
+  <!-- 쇼릴: video/hero.mp4 교체 (전체 화면, 음소거·반복) -->
+  <video src="video/hero.mp4" poster="video/hero.jpg" autoplay muted loop playsinline preload="auto" aria-hidden="true"></video>
+  <div class="hero-shade" aria-hidden="true"></div>
+  <div class="wrap hero-inner">
+    <h1 class="hero-title"><span class="line"><span>Ideas into</span></span><span class="line"><span>Experience.</span></span></h1>
+    <div class="hero-row" data-reveal>
+      <p class="hero-sub">A cinematography studio — camera, light &amp; aerial.</p>
+      <div class="hero-meta">
+        <span class="label">Cinematography Studio</span>
+        <a class="label u" href="#work">Scroll ↓</a>
+      </div>
     </div>
   </div>
-  <!-- 쇼릴: video/hero.mp4 교체 (16:9, 음소거·반복) -->
-  <div class="reel" data-reveal>
-    <video src="video/hero.mp4" poster="video/hero.jpg" autoplay muted loop playsinline preload="auto" aria-label="651WORKS 쇼릴"></video>
-  </div>
-  <div class="reel-cap"><span class="label">Showreel</span><span class="label">Cinematography</span></div>
 </section>
 
 <!-- 02 Selected Works — 파트별 대표작 (assets/projects.js의 featured) -->
