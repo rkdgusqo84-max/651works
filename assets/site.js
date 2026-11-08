@@ -3,6 +3,7 @@
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var CATS = window.CATEGORIES || {};
   var LIST = window.PROJECTS || [];
+  var JA = root.lang === 'ja';   // 일본어 페이지면 titleJa 사용
 
   function esc(s) {
     return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) {
@@ -78,7 +79,7 @@
     var href = p.placeholder ? '' : ' href="project.html?id=' + encodeURIComponent(p.id) + '"';
     return '<' + tag + ' class="work ' + (!half && p.span === 'full' ? 'full' : 'half') + '" data-cat="' + esc(p.category) + '"' + href + ' data-reveal>' +
       '<div class="work-media" style="aspect-ratio:' + esc(p.ratio || '16/9') + '">' + mediaHTML(p) + '</div>' +
-      '<div class="work-info"><h3>' + esc(p.title) + '</h3><span class="year">' + esc(p.year || '—') + '</span>' +
+      '<div class="work-info"><h3>' + esc((JA && p.titleJa) || p.title) + '</h3><span class="year">' + esc(p.year || '—') + '</span>' +
       '<span class="label">' + esc(CATS[p.category]) + (p.type ? ' · ' + esc(p.type) : '') + '</span></div>' +
       '</' + tag + '>';
   }
