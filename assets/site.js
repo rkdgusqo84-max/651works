@@ -99,6 +99,14 @@
     }).join('');
   }
 
+  /* ── 골라서 보여주기: <div class="works" data-ids="id1,id2"> ── */
+  document.querySelectorAll('[data-ids]').forEach(function (box) {
+    box.innerHTML = box.dataset.ids.split(',').map(function (id) {
+      var p = LIST.filter(function (x) { return x.id === id.trim(); })[0];
+      return p ? workHTML(p, true) : '';
+    }).join('');
+  });
+
   /* ── 전체 작업: 필터 (works.html?cat=drone 처럼 바로 열 수 있음) ── */
   var grid = document.getElementById('works-grid');
   if (grid) {

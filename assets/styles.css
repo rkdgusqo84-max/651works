@@ -173,6 +173,25 @@ a.work:hover .more,a.work:focus-visible .more{opacity:1;transform:none}
 .footer-col a{width:fit-content}
 .copy{grid-column:10 / -1;align-self:end;justify-self:end;margin:0;white-space:nowrap;font-family:var(--f-en);font-size:12px;color:var(--c-text-2)}
 
+/* ───────── Japan page ───────── */
+.ja-lead{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:24px 48px;margin-top:clamp(32px,4vw,56px)}
+.ja-lead p{margin:0;max-width:34em;font-size:clamp(16px,1.4vw,19px);line-height:1.9}
+.ja-lead strong{font-weight:600}
+.offer{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--gap)}
+.offer article{display:flex;flex-direction:column;gap:14px;border-top:1px solid var(--c-text);padding-top:18px}
+.offer h3{margin:0;font-weight:500;font-size:var(--fs-h3);letter-spacing:-.02em;line-height:1.35}
+.offer p{margin:0;color:var(--c-text-2)}
+.offer ul{margin:4px 0 0;padding:0;list-style:none}
+.offer li{padding:10px 0;border-top:1px solid var(--c-line);font-size:15px}
+.flow{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--gap)}
+.flow li{display:flex;flex-direction:column;gap:8px;border-top:1px solid var(--c-line);padding-top:16px}
+.flow strong{font-weight:500;font-size:18px}
+.flow p{margin:0;font-size:15px;color:var(--c-text-2)}
+.ja-note{margin:14px 0 0;font-size:15px;color:var(--c-text-2)}
+.japan-box{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:24px 48px;border-top:1px solid var(--c-text);padding-top:24px}
+.japan-box p{margin:0;max-width:36em;font-size:17px}
+.japan-box p[lang="ja"]{margin-top:10px;color:var(--c-text-2);font-family:'Noto Sans JP','Pretendard',sans-serif;font-size:15px}
+
 /* ───────── Project detail ───────── */
 .p-head{padding-top:calc(var(--header-h) + clamp(48px,7vw,104px))}
 .back{display:inline-block;margin-bottom:clamp(32px,4vw,56px);font-family:var(--f-en);font-size:14px;font-weight:500}
@@ -222,6 +241,8 @@ body.leaving{opacity:0;transition:opacity .28s ease}
   .copy{grid-column:1 / -1;justify-self:start}
   .p-body p{grid-column:3 / -1}
   .p-body .ext{grid-column:3 / -1;justify-self:start}
+  .offer{grid-template-columns:1fr}
+  .flow{grid-template-columns:1fr 1fr}
 }
 @media (max-width:720px){
   :root{--header-h:60px}
@@ -240,6 +261,7 @@ body.leaving{opacity:0;transition:opacity .28s ease}
   .service{display:flex;flex-direction:column}
   .btn{justify-self:start}
   .p-meta{grid-template-columns:1fr 1fr;row-gap:24px}
+  .offer,.flow{grid-template-columns:1fr}
   .players.multi{grid-template-columns:1fr}
   .p-body .ext{justify-self:start}
   .copy{justify-self:start}
